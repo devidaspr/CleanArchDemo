@@ -16,6 +16,12 @@ namespace CleanArch.Infra.Data.Repository
             this._dataContext = dataContext;
         }
 
+        public void Add(Course course)
+        {
+            _dataContext.Courses.Add(course);
+            _dataContext.SaveChanges();
+        }
+
         public IEnumerable<Course> GetCourses()
         {
             return _dataContext.Courses;
